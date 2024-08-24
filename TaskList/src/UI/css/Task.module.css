@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 96vw;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    margin:20px ;
+}
+.InfoList{
+    max-width: 80%;
+    margin-right: 10px;
+}
+.buttonList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    gap: 10px;
+}
+

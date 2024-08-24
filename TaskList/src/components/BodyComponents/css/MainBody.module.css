@@ -1,0 +1,43 @@
+.wrapper{
+    max-width: 1600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Card{
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    color: white;
+    background-color: white;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px 10px 30px 10px;
+    background-image: url(./Img/Task.jpg);
+    background-position: right 25% bottom 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.button{
+    text-decoration: none;
+    width: 150px;
+    height: 150px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.247);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 2s ease, color 1s ease;
+   
+}
+.button:hover{
+    background-color: white;
+    color: black;
+}

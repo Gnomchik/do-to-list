@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Duration{
+  id        Int      @id @default(autoincrement())
+  name      String
+  taskStorage taskStorage[]
+}
+
+model taskStorage{
+  id        Int      @id @default(autoincrement())
+  name      String
+  description String
+  durationId Int
+  duration   Duration @relation(fields: [durationId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tasks      task[]
+}
+
+model task{
+  id        Int      @id @default(autoincrement())
+  name      String
+  description String
+  tags      String
+  priorityId  Int
+  priority   priority @relation(fields: [priorityId], references: [id])
+  storageId Int
+  storage   taskStorage @relation(fields: [storageId], references: [id])
+  DueTo DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model priority{
+  id        Int      @id @default(autoincrement())
+  name      String
+  task      task[]
+}
